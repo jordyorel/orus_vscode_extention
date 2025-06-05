@@ -1,0 +1,101 @@
+{
+  "scopeName": "source.orus",
+  "name": "Orus",
+  "patterns": [
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#strings"
+    },
+    {
+      "include": "#numbers"
+    },
+    {
+      "include": "#keywords"
+    },
+    {
+      "include": "#types"
+    },
+    {
+      "include": "#builtins"
+    },
+    {
+      "name": "entity.name.type.struct.orus",
+      "match": "\\b[A-Z][A-Za-z0-9_]*\\b"
+    }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.double-slash.orus",
+          "match": "//.*$"
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "name": "string.quoted.double.orus",
+          "begin": "\"",
+          "end": "\"",
+          "patterns": [
+            {
+              "match": "\\\\.",
+              "name": "constant.character.escape.orus"
+            }
+          ]
+        }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        {
+          "name": "constant.numeric.float.orus",
+          "match": "\\b\\d+\\.\\d+\\b"
+        },
+        {
+          "name": "constant.numeric.integer.orus",
+          "match": "\\b\\d+\\b"
+        }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.orus",
+          "match": "\\b(fn|return|let|struct|impl|for|in|while|if|elif|else|break|continue)\\b"
+        },
+        {
+          "name": "keyword.operator.logical.orus",
+          "match": "\\b(and|or|not)\\b"
+        },
+        {
+          "name": "constant.language.boolean.orus",
+          "match": "\\b(true|false|nil)\\b"
+        }
+      ]
+    },
+    "types": {
+      "patterns": [
+        {
+          "name": "storage.type.orus",
+          "match": "\\b(i32|u32|f64|bool|string)\\b"
+        }
+      ]
+    },
+    "builtins": {
+      "patterns": [
+        {
+          "name": "variable.language.self.orus",
+          "match": "\\bself\\b"
+        },
+        {
+          "name": "support.function.builtin.orus",
+          "match": "\\bprint\\b"
+        }
+      ]
+    }
+  }
+}

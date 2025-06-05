@@ -1,0 +1,38 @@
+{
+  "name": "orus-lang",
+  "displayName": "Orus Language",
+  "description": "Syntax highlighting for the Orus programming language",
+  "version": "0.0.1",
+  "publisher": "orus",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "orus",
+        "aliases": [
+          "Orus",
+          "orus"
+        ],
+        "extensions": [
+          ".orus"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "orus",
+        "scopeName": "source.orus",
+        "path": "./syntaxes/orus.tmLanguage.json"
+      }
+    ]
+  },
+  "scripts": {
+    "test": "echo \"No tests specified\""
+  }
+}
