@@ -1,15 +1,21 @@
 {
   "name": "orus-lang",
-  "displayName": "Orus Language",
-  "description": "Syntax highlighting for the Orus programming language",
-  "version": "0.0.1",
-  "icon": "logo/orus-min.png",
-  "publisher": "orus",
-  "license": "MIT",
+  "displayName": "Orus Language",rus-lang",
+  "displayNa  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/jordyorel/orus_vscode_extention.git"
   },
+  "files": [
+    "syntaxes/",
+    "language-configuration.json",
+    "README.md",
+    "LANGUAGE.md",
+    "LICENSE"
+  ],us Language",
+  "description": "Syntax highlighting for the Orus programming language",
+  "version": "0.0.1",
+  "publisher": "orus",
   "engines": {
     "vscode": "^1.80.0"
   },
@@ -40,5 +46,13 @@
   },
   "scripts": {
     "test": "echo \"No tests specified\""
-  }
+  },
+  "license": "MIT",
+  "files": [
+    "syntaxes/",
+    "language-configuration.json",
+    "README.md",
+    "LANGUAGE.md",
+    "LICENSE"
+  ]
 }
