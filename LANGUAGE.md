@@ -1,14 +1,14 @@
-# Orus Language Overview
+# Orus Language Reference
 
-This document provides a short tour of the Orus programming language.
-Examples are taken from the programs located in the `tests/` directory.
+This document provides a comprehensive reference for the Orus programming language (version 0.5.0).
+All examples are taken from the programs located in the `tests/` directory.
 
-## Primitive types
+## Primitive Types
 
-Orus supports several built‑in value types:
+Orus supports the following built-in primitive types:
 
-- `i32` – signed 32‑bit integers.
-- `u32` – unsigned 32‑bit integers.
+- `i32` – Signed 32-bit integers (range: -2,147,483,648 to 2,147,483,647)
+- `u32` – Unsigned 32-bit integers (range: 0 to 4,294,967,295)
 - `f64` – 64‑bit floating point numbers.
 - `bool` – boolean values `true` or `false`.
 - `string` – UTF‑8 text.

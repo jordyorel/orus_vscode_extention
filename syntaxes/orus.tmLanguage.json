@@ -21,8 +21,15 @@
       "include": "#builtins"
     },
     {
+      "include": "#generics"
+    },
+    {
       "name": "entity.name.type.struct.orus",
       "match": "\\b[A-Z][A-Za-z0-9_]*\\b"
+    },
+    {
+      "name": "entity.name.function.orus",
+      "match": "\\b[a-z][A-Za-z0-9_]*(?=\\s*\\()"
     }
   ],
   "repository": {
@@ -31,6 +38,14 @@
         {
           "name": "comment.line.double-slash.orus",
           "match": "//.*$"
+        },
+        {
+          "name": "comment.block.orus",
+          "begin": "/\\*",
+          "end": "\\*/",
+          "captures": {
+            "0": { "name": "punctuation.definition.comment.orus" }
+          }
         }
       ]
     },
@@ -44,6 +59,13 @@
             {
               "match": "\\\\.",
               "name": "constant.character.escape.orus"
+            },
+            {
+              "name": "meta.interpolation.orus",
+              "match": "{\\s*}",
+              "captures": {
+                "0": { "name": "constant.character.format.placeholder.orus" }
+              }
             }
           ]
         }
@@ -65,7 +87,7 @@
       "patterns": [
         {
           "name": "keyword.control.orus",
-          "match": "\\b(fn|return|let|struct|impl|for|in|while|if|elif|else|break|continue)\\b"
+          "match": "\\b(fn|return|let|struct|impl|for|in|while|if|elif|else|break|continue|import|try|catch|match)\\b"
         },
         {
           "name": "keyword.operator.logical.orus",
@@ -74,6 +96,14 @@
         {
           "name": "constant.language.boolean.orus",
           "match": "\\b(true|false|nil)\\b"
+        },
+        {
+          "name": "keyword.operator.range.orus",
+          "match": "\\.\\."
+        },
+        {
+          "name": "keyword.operator.match.orus",
+          "match": "=>"
         }
       ]
     },
@@ -93,7 +123,25 @@
         },
         {
           "name": "support.function.builtin.orus",
-          "match": "\\bprint\\b"
+          "match": "\\b(print|len|substring|push|pop|range|type_of|is_type|input|int|float)\\b"
+        }
+      ]
+    },
+    "generics": {
+      "patterns": [
+        {
+          "name": "meta.generic.orus",
+          "begin": "<",
+          "end": ">",
+          "beginCaptures": {
+            "0": { "name": "punctuation.definition.generic.begin.orus" }
+          },
+          "endCaptures": {
+            "0": { "name": "punctuation.definition.generic.end.orus" }
+          },
+          "patterns": [
+            { "include": "#types" }
+          ]
         }
       ]
     }

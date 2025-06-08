@@ -2,8 +2,8 @@
   "name": "orus-lang",
   "displayName": "Orus Language",
   "description": "Syntax highlighting for the Orus programming language",
-  "version": "0.0.1",
-  "icon": "logo/orus-min.png",
+  "version": "0.0.2",
+  "icon": "logo/logo.png",
   "publisher": "orus",
   "license": "MIT",
   "repository": {
@@ -27,7 +27,11 @@
         "extensions": [
           ".orus"
         ],
-        "configuration": "./language-configuration.json"
+        "configuration": "./language-configuration.json",
+        "icon": {
+          "light": "./logo/logo.png",
+          "dark": "./logo/logo.png"
+        }
       }
     ],
     "grammars": [
