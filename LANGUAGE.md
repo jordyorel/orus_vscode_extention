@@ -1,6 +1,6 @@
 # Orus Language Reference
 
-This document provides a comprehensive reference for the Orus programming language (version 0.5.0).
+This document provides a comprehensive reference for the Orus programming language (version 0.5.2).
 All examples are taken from the programs located in the `tests/` directory.
 
 ## Primitive Types
@@ -116,18 +116,19 @@ Variables are introduced with the `let` keyword and follow these rules:
 
 - All variables must be explicitly declared before use
 - Type annotations are optional when the type can be inferred
-- Variables can be reassigned with a compatible value
+- Variables are immutable by default and can only be reassigned when declared with `let mut`
+- A variable's type is fixed after its declaration or first assignment
 - Variable scope is block-based
 - Variables cannot be declared outside functions
 - Variable names follow the common identifier rules (letters, digits, underscore; must start with letter/underscore)
 
 Examples:
 ```orus
-let count = 0                 // Type inference (i32)
+let mut count = 0             // Mutable variable (i32)
 let text: string = "hello"    // Explicit type annotation
 let flag = true               // Type inference (bool)
 
-// Reassignment 
+// Reassignment only works on `count`
 count = 10                    // Simple reassignment
 count += 2                    // Compound assignment
 
@@ -165,7 +166,13 @@ Orus provides these operators with standard precedence rules:
 
 ### Type Conversion
 
-Type conversion must be performed explicitly, as Orus does not perform implicit type conversions between numeric types.
+Type conversion must be performed explicitly, as Orus does not perform implicit type conversions between numeric types. Use the `as` keyword to cast a value to another numeric type:
+
+```orus
+let a: i32 = -42
+let b: u32 = a as u32
+let c: f64 = b as f64
+```
 
 ## Modules and Imports
 
@@ -173,7 +180,7 @@ Orus organizes code in files that serve as modules. The module system follows th
 
 - Modules are loaded using the `use` statement
 - `use` statements must appear at the top level of a file, not inside functions
-- Each file is executed only once during the program's lifetime, regardless of how many times it's imported
+- Importing the same module more than once results in a runtime error
 - Modules can contain function definitions, struct definitions, and `impl` blocks
 - Module files do **not** require a `main` function and are not meant to be executed directly
 
@@ -183,7 +190,17 @@ use path::to::module
 
 fn main() {
     // Call functions from the imported module
-    module_function()
+module_function()
+}
+```
+
+Modules can be imported under a different name using the `as` keyword:
+
+```orus
+use datetime as dt
+
+fn main() {
+    let now = dt.now()
 }
 ```
 

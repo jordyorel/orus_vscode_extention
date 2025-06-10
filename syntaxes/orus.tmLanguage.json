@@ -24,12 +24,19 @@
       "include": "#generics"
     },
     {
+      "include": "#operators"
+    },
+    {
       "name": "entity.name.type.struct.orus",
       "match": "\\b[A-Z][A-Za-z0-9_]*\\b"
     },
     {
       "name": "entity.name.function.orus",
       "match": "\\b[a-z][A-Za-z0-9_]*(?=\\s*\\()"
+    },
+    {
+      "name": "variable.other.orus",
+      "match": "\\b[a-z][a-zA-Z0-9_]*\\b"
     }
   ],
   "repository": {
@@ -87,7 +94,7 @@
       "patterns": [
         {
           "name": "keyword.control.orus",
-          "match": "\\b(fn|return|let|struct|impl|for|in|while|if|elif|else|break|continue|import|try|catch|match)\\b"
+          "match": "\\b(fn|return|let|mut|struct|impl|for|in|while|if|elif|else|break|continue|import|use|try|catch|match|as)\\b"
         },
         {
           "name": "keyword.operator.logical.orus",
@@ -104,6 +111,10 @@
         {
           "name": "keyword.operator.match.orus",
           "match": "=>"
+        },
+        {
+          "name": "keyword.operator.assignment.compound.orus",
+          "match": "(\\+=|-=|\\*=|/=|%=)"
         }
       ]
     },
@@ -130,7 +141,7 @@
         },
         {
           "name": "support.function.builtin.orus",
-          "match": "\\b(print|len|substring|push|pop|range|type_of|is_type|input|int|float)\\b"
+          "match": "\\b(print|len|substring|push|pop|range|type_of|is_type|input|int|float|sum|min|max|sorted)\\b"
         }
       ]
     },
@@ -149,6 +160,26 @@
           "patterns": [
             { "include": "#types" }
           ]
+        }
+      ]
+    },
+    "operators": {
+      "patterns": [
+        {
+          "name": "keyword.operator.arithmetic.orus",
+          "match": "[+\\-*/%]"
+        },
+        {
+          "name": "keyword.operator.comparison.orus", 
+          "match": "(==|!=|<=|>=|<|>)"
+        },
+        {
+          "name": "keyword.operator.assignment.orus",
+          "match": "="
+        },
+        {
+          "name": "keyword.operator.accessor.orus",
+          "match": "\\."
         }
       ]
     }
