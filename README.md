@@ -7,10 +7,10 @@ Keywords and operators are highlighted similarly to Python and Rust. The languag
 ## Features
 - Highlight keywords such as `fn`, `let mut`, `struct`, `impl`, `match`, `try/catch`, control flow statements and boolean operators.
 - Built-in types (`i32`, `u32`, `f64`, `bool`, `string`) and the `nil` value.
-- Support for generics with the `<T>` syntax.
+- Support for generics with the `<T>` syntax including nested type parameters.
 - Module imports with the `use` keyword and type casting with the `as` keyword.
 - Comments with both `//` single-line and `/* */` block comment styles.
-- Strings with interpolation using `{}` placeholders.
+- Strings with interpolation using `{}` placeholders and support for multi-line interpolation blocks.
 - Array types and operations including slicing with `..` notation.
 - Compound assignment operators (`+=`, `-=`, `*=`, `/=`, `%=`).
 - Numeric literals for integers and floating-point values.
