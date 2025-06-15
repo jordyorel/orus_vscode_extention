@@ -59,6 +59,14 @@
     "strings": {
       "patterns": [
         {
+          "name": "string.quoted.triple.orus",
+          "begin": "\"\"\"",
+          "end": "\"\"\"",
+          "patterns": [
+            { "match": "\\\\.", "name": "constant.character.escape.orus" }
+          ]
+        },
+        {
           "name": "string.quoted.double.orus",
           "begin": "\"",
           "end": "\"",
@@ -85,6 +93,14 @@
                 "0": { "name": "constant.character.format.placeholder.orus" }
               }
             }
+          ]
+        },
+        {
+          "name": "string.quoted.single.orus",
+          "begin": "'",
+          "end": "'",
+          "patterns": [
+            { "match": "\\\\.", "name": "constant.character.escape.orus" }
           ]
         }
       ]

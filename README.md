@@ -11,6 +11,7 @@ Keywords and operators are highlighted similarly to Python and Rust. The languag
 - Module imports with the `use` keyword and type casting with the `as` keyword.
 - Comments with both `//` single-line and `/* */` block comment styles.
 - Strings with interpolation using `{}` placeholders and support for multi-line interpolation blocks.
+- Single and triple quoted strings for more flexible literals.
 - Array types and operations including slicing with `..` notation.
 - Compound assignment operators (`+=`, `-=`, `*=`, `/=`, `%=`).
 - Numeric literals for integers and floating-point values.
@@ -20,3 +21,6 @@ Keywords and operators are highlighted similarly to Python and Rust. The languag
 Install the extension from the VSIX package or clone this repository and run `vsce package` to build.
 
 Once installed, any file with the `.orus` extension will be highlighted automatically.
+
+## Color Theme
+This release bundles a `Orus Rust-Python` theme with colors inspired mostly by Rust but borrowing touches from Python themes. Activate it from the VS Code theme picker to get consistent highlighting across your Orus files.

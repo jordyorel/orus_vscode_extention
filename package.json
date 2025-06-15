@@ -2,7 +2,7 @@
   "name": "orus-lang",
   "displayName": "Orus Language",
   "description": "Syntax highlighting for the Orus programming language",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "icon": "logo/logo.png",
   "publisher": "orus",
   "license": "MIT",
@@ -39,6 +39,13 @@
         "language": "orus",
         "scopeName": "source.orus",
         "path": "./syntaxes/orus.tmLanguage.json"
+      }
+    ],
+    "themes": [
+      {
+        "label": "Orus Rust-Python",
+        "uiTheme": "vs-dark",
+        "path": "./themes/orus-color-theme.json"
       }
     ]
   },
