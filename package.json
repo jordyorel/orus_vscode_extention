@@ -2,7 +2,7 @@
   "name": "orus-lang",
   "displayName": "Orus Language",
   "description": "Syntax highlighting for the Orus programming language",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "icon": "logo/logo.png",
   "publisher": "orus",
   "license": "MIT",
