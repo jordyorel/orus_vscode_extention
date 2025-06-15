@@ -24,3 +24,7 @@ Once installed, any file with the `.orus` extension will be highlighted automati
 
 ## Color Theme
 This release bundles a `Orus Rust-Python` theme with colors inspired mostly by Rust but borrowing touches from Python themes. Activate it from the VS Code theme picker to get consistent highlighting across your Orus files.
+
+## Troubleshooting
+
+If you encounter issues like white text in long code sections or other syntax highlighting problems, please see the [Troubleshooting Guide](./TROUBLESHOOTING.md).

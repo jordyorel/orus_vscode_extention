@@ -27,16 +27,10 @@
       "include": "#operators"
     },
     {
-      "name": "entity.name.type.struct.orus",
-      "match": "\\b[A-Z][A-Za-z0-9_]*\\b"
+      "include": "#function-calls"
     },
     {
-      "name": "entity.name.function.orus",
-      "match": "\\b[a-z][A-Za-z0-9_]*(?=\\s*\\()"
-    },
-    {
-      "name": "variable.other.orus",
-      "match": "\\b[a-z][a-zA-Z0-9_]*\\b"
+      "include": "#identifiers"
     }
   ],
   "repository": {
@@ -209,6 +203,26 @@
         {
           "name": "keyword.operator.accessor.orus",
           "match": "\\."
+        }
+      ]
+    },
+    "function-calls": {
+      "patterns": [
+        {
+          "name": "meta.function-call.orus",
+          "match": "\\b([a-zA-Z_][a-zA-Z0-9_]*)\\s*(\\()",
+          "captures": {
+            "1": { "name": "entity.name.function.orus" },
+            "2": { "name": "punctuation.definition.parameters.begin.orus" }
+          }
+        }
+      ]
+    },
+    "identifiers": {
+      "patterns": [
+        {
+          "name": "variable.other.orus",
+          "match": "\\b[a-zA-Z_][a-zA-Z0-9_]*\\b"
         }
       ]
     }

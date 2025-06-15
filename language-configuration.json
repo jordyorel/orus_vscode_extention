@@ -55,5 +55,17 @@
       "\"",
       "\""
     ]
-  ]
+  ],
+  "folding": {
+    "markers": {
+      "start": "^\\s*// region:\\s*(.*?)$",
+      "end": "^\\s*// endregion$"
+    },
+    "offSide": false
+  },
+  "wordPattern": "(-?\\d*\\.\\d\\w*)|([^\\`\\~\\!\\@\\#\\%\\^\\&\\*\\(\\)\\-\\=\\+\\[\\{\\]\\}\\\\\\|\\;\\:\\'\\\"\\,\\.\\<\\>\\/\\?\\s]+)",
+  "indentationRules": {
+    "increaseIndentPattern": "^.*\\{[^}\"']*$|^.*\\([^\\)\"']*$|^\\s*(if|else|for|while|fn|struct|enum|impl).*$",
+    "decreaseIndentPattern": "^\\s*[}\\)]"
+  }
 }

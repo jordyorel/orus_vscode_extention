@@ -28,6 +28,16 @@
     "Programming Languages"
   ],
   "contributes": {
+    "configuration": {
+      "title": "Orus",
+      "properties": {
+        "orus-lang.maxTokenizationLineLength": {
+          "type": "number",
+          "default": 20000,
+          "description": "Maximum line length for syntax highlighting to prevent timeouts on very long lines."
+        }
+      }
+    },
     "languages": [
       {
         "id": "orus",
