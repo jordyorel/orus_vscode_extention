@@ -1,30 +1,42 @@
 # Orus VS Code Extension
 
-This extension adds syntax highlighting support for the **Orus** programming language.
+![Orus logo](logo/logo.png)
 
-Keywords and operators are highlighted similarly to Python and Rust. The language features are described in [`LANGUAGE.md`](./LANGUAGE.md) and the example programs under the `tests/` directory.
+This extension adds first-class Visual Studio Code support for the Orus programming language. It pairs the official language
+grammar with editor ergonomics so you can read, write, and run Orus code without leaving VS Code.
 
 ## Features
-- Highlight keywords such as `fn`, `let mut`, `struct`, `impl`, `match`, `try/catch`, control flow statements and boolean operators.
-- Built-in types (`i32`, `u32`, `f64`, `bool`, `string`) and the `nil` value.
-- Support for generics with the `<T>` syntax including nested type parameters.
-- Module imports with the `use` keyword and type casting with the `as` keyword.
-- Comments with both `//` single-line and `/* */` block comment styles.
-- Strings with interpolation using `{}` placeholders and support for multi-line interpolation blocks.
-- Single and triple quoted strings for more flexible literals.
-- Array types and operations including slicing with `..` notation.
-- Compound assignment operators (`+=`, `-=`, `*=`, `/=`, `%=`).
-- Numeric literals for integers and floating-point values.
-- Enhanced built-in functions including array operations like `sum`, `min`, `max`, and `sorted`.
+- Accurate TextMate grammar derived from [`docs/grammar.ebnf`](docs/grammar.ebnf) and [`docs/KEYWORDS.md`](docs/KEYWORDS.md)
+- Language configuration for comments, indentation, and bracket pairing
+- Productive snippets curated from [`docs/TUTORIAL.md`](docs/TUTORIAL.md)
+- `Orus: Run Current File` command to execute the active `.orus` file through the Orus CLI
+- `Orus: New Sample File` command for quickly bootstrapping a fresh script
 
-## Usage
-Install the extension from the VSIX package or clone this repository and run `vsce package` to build.
+## Getting Started
+1. Run `npm install` to fetch the extension dependencies.
+2. Build the extension once with `npm run compile`.
+3. Press `F5` (Run → Start Debugging) to launch the Extension Development Host.
+4. Open any `.orus` file (see `hello.orus` or `basic_algorithms.orus`) to try the highlighting, snippets, and commands.
 
-Once installed, any file with the `.orus` extension will be highlighted automatically.
+## Commands
+| Command | Description |
+|---------|-------------|
+| `Orus: Run Current File` | Saves and runs the active file via the configured Orus executable. |
+| `Orus: New Sample File` | Opens a new unsaved editor populated with a friendly Orus template. |
 
-## Color Theme
-This release bundles a `Orus Rust-Python` theme with colors inspired mostly by Rust but borrowing touches from Python themes. Activate it from the VS Code theme picker to get consistent highlighting across your Orus files.
+The run command streams output to a dedicated *Orus* output channel by default. Enable the `orus.runInTerminal` setting to use
+an integrated terminal instead.
 
-## Troubleshooting
+## Settings
+| Setting | Default | Description |
+|---------|---------|-------------|
+| `orus.executablePath` | `orus` | Absolute or relative path to the Orus CLI. |
+| `orus.runInTerminal` | `false` | When `true`, run files inside the integrated terminal instead of the output channel. |
 
-If you encounter issues like white text in long code sections or other syntax highlighting problems, please see the [Troubleshooting Guide](./TROUBLESHOOTING.md).
+## Packaging
+- `npm run package` bundles a `.vsix` (requires [`vsce`](https://code.visualstudio.com/api/working-with-extensions/publishing-extension)).
+- `vsce package` output can be installed locally via *Extensions → … → Install from VSIX*.
+
+## Contributing
+The TextMate grammar intentionally mirrors `docs/grammar.ebnf`. When the language evolves, update both documents together and bump
+`package.json` accordingly. Sample programs in this repository help validate highlighting and snippets—feel free to add more.

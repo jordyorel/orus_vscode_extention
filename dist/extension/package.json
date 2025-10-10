@@ -1,0 +1,98 @@
+{
+  "name": "orus-language-support",
+  "displayName": "Orus",
+  "description": "Language support for the Orus programming language: syntax highlighting, snippets, and tooling.",
+  "version": "0.1.0",
+  "publisher": "orus-lang",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "keywords": [
+    "orus",
+    "language",
+    "syntax",
+    "highlighting"
+  ],
+  "icon": "logo/logo.png",
+  "activationEvents": [
+    "onLanguage:orus",
+    "onCommand:orus.runFile",
+    "onCommand:orus.createFileFromTemplate"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "orus",
+        "aliases": ["Orus", "orus"],
+        "extensions": [".orus"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "orus",
+        "scopeName": "source.orus",
+        "path": "./syntaxes/orus.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "orus",
+        "path": "./snippets/orus.code-snippets"
+      }
+    ],
+    "commands": [
+      {
+        "command": "orus.runFile",
+        "title": "Orus: Run Current File",
+        "category": "Orus"
+      },
+      {
+        "command": "orus.createFileFromTemplate",
+        "title": "Orus: New Sample File",
+        "category": "Orus"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "orus.runFile",
+          "group": "navigation",
+          "when": "resourceExtname == .orus"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Orus",
+      "properties": {
+        "orus.executablePath": {
+          "type": "string",
+          "default": "orus",
+          "description": "Path to the Orus CLI executable used when running files."
+        },
+        "orus.runInTerminal": {
+          "type": "boolean",
+          "default": false,
+          "description": "If enabled, run Orus files in an integrated terminal instead of the Orus output channel."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.10",
+    "@types/vscode": "^1.85.0",
+    "tslib": "^2.6.2",
+    "typescript": "^5.4.0"
+  }
+}

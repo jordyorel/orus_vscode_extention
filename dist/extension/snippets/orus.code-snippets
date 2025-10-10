@@ -1,0 +1,48 @@
+{
+  "Main Function": {
+    "scope": "orus",
+    "prefix": "orus-main",
+    "body": [
+      "fn main():",
+      "    ${1:print}(\"Hello, Orus!\")",
+      ""
+    ],
+    "description": "Create the main entry point for an Orus application."
+  },
+  "Struct Definition": {
+    "scope": "orus",
+    "prefix": "orus-struct",
+    "body": [
+      "struct ${1:Name}:",
+      "    ${2:field}: ${3:Type}",
+      "",
+      "impl ${1:Name}:",
+      "    fn new(${4:params}) -> ${1:Name}:",
+      "        ${1:Name}(${5:fields})"
+    ],
+    "description": "Define a struct with an accompanying constructor."
+  },
+  "Match Expression": {
+    "scope": "orus",
+    "prefix": "orus-match",
+    "body": [
+      "match ${1:subject}:",
+      "    ${2:pattern1} ->",
+      "        ${3:result1}",
+      "    ${4:pattern2} ->",
+      "        ${5:result2}",
+      "    else ->",
+      "        ${6:default}"
+    ],
+    "description": "Pattern matching scaffold."
+  },
+  "For Range Loop": {
+    "scope": "orus",
+    "prefix": "orus-for-range",
+    "body": [
+      "for ${1:item} in ${2:start}..${3:end}:",
+      "    ${4:body}"
+    ],
+    "description": "Iterate over a numeric range."
+  }
+}
