@@ -3,7 +3,7 @@
 ![Orus logo](logo/logo.png)
 
 This extension adds first-class Visual Studio Code support for the Orus programming language. It pairs the official language
-grammar with editor ergonomics so you can read, write, and run Orus code without leaving VS Code.
+grammar with editor ergonomics so you can read, write, and run Orus code without leaving VS Code. The extension targets VS Code 1.56 and newer builds.
 
 ## Features
 - Accurate TextMate grammar derived from [`docs/grammar.ebnf`](docs/grammar.ebnf) and [`docs/KEYWORDS.md`](docs/KEYWORDS.md)

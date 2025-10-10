@@ -2,11 +2,11 @@
   "name": "orus-language-support",
   "displayName": "Orus",
   "description": "Language support for the Orus programming language: syntax highlighting, snippets, and tooling.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "publisher": "orus-lang",
   "license": "MIT",
   "engines": {
-    "vscode": "^1.85.0"
+    "vscode": "^1.56.0"
   },
   "categories": [
     "Programming Languages"
