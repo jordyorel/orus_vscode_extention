@@ -1,7 +1,8 @@
 print("Hello Jordy and Welcome to the Orus Lang")
 
-fn test() {
+fn test():
     print("Hello Jordy.")
-}
+
 
 test()
+

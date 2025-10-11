@@ -58,7 +58,7 @@
     ],
     "themes": [
       {
-        "label": "Orus Purple",
+        "label": "Orus One Dark",
         "uiTheme": "vs-dark",
         "path": "./themes/orus-color-theme.json"
       }
@@ -105,23 +105,43 @@
               "storage.modifier.orus"
             ],
             "settings": {
-              "foreground": "#A988FF"
+              "foreground": "#C678DD"
             }
           },
           {
             "scope": [
-              "support.function.builtin.orus"
-            ],
-            "settings": {
-              "foreground": "#C7A3FF"
-            }
-          },
-          {
-            "scope": [
+              "support.function.builtin.orus",
+              "entity.name.function.orus",
               "entity.name.function.call.orus"
             ],
             "settings": {
-              "foreground": "#7DD3FC"
+              "foreground": "#61AFEF"
+            }
+          },
+          {
+            "scope": [
+              "entity.name.type.struct.orus",
+              "entity.name.type.enum.orus",
+              "entity.name.type.class.orus"
+            ],
+            "settings": {
+              "foreground": "#E5C07B"
+            }
+          },
+          {
+            "scope": [
+              "string.quoted.double.orus"
+            ],
+            "settings": {
+              "foreground": "#98C379"
+            }
+          },
+          {
+            "scope": [
+              "constant.numeric.orus"
+            ],
+            "settings": {
+              "foreground": "#D19A66"
             }
           },
           {
@@ -129,7 +149,25 @@
               "constant.other.constant.orus"
             ],
             "settings": {
-              "foreground": "#FFD479"
+              "foreground": "#E5C07B"
+            }
+          },
+          {
+            "scope": [
+              "variable.other.orus"
+            ],
+            "settings": {
+              "foreground": "#E06C75"
+            }
+          },
+          {
+            "scope": [
+              "support.type.numeric.orus",
+              "support.type.text.orus",
+              "constant.language.boolean.orus"
+            ],
+            "settings": {
+              "foreground": "#56B6C2"
             }
           }
         ]

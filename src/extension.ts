@@ -3,11 +3,13 @@ import { spawn } from 'child_process';
 import * as path from 'path';
 
 import { defaultTemplate } from './defaultTemplate';
+import { OrusLanguageClient } from './languageClient';
 
 let outputChannel: vscode.OutputChannel | undefined;
 let reusableTerminal: vscode.Terminal | undefined;
+let languageClient: OrusLanguageClient | undefined;
 
-export function activate(context: vscode.ExtensionContext) {
+export async function activate(context: vscode.ExtensionContext) {
   outputChannel = vscode.window.createOutputChannel('Orus');
   context.subscriptions.push(outputChannel);
 
@@ -64,11 +66,16 @@ export function activate(context: vscode.ExtensionContext) {
   });
 
   context.subscriptions.push(runDisposable, templateDisposable, terminalCloseDisposable);
+
+  languageClient = new OrusLanguageClient(context);
+  await languageClient.start();
+  context.subscriptions.push(languageClient);
 }
 
-export function deactivate() {
+export async function deactivate() {
   reusableTerminal?.dispose();
   outputChannel?.dispose();
+  await languageClient?.stop();
 }
 
 function runInIntegratedTerminal(executablePath: string, filePath: string) {

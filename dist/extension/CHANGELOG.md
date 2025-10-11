@@ -1,8 +1,9 @@
 # Changelog
 
 ## Unreleased
-- Expanded keyword scopes, builtin detection, constants, and function-call highlighting so every Orus construct receives a token colour
-- Added purple accent coloring via bundled theme and default token customizations
+- Added a lightweight Orus language server that returns keyword documentation on hover inside VS Code
+- Expanded keyword scopes, builtin detection, constants, types, variables, and function-call highlighting so every Orus construct receives a token colour
+- Replaced the bundled theme with an One Dark Pro-inspired palette and matching default token customizations
 - Shipped Orus file icon theme assets (Seti-based) so `.orus` files display the logo without losing default icons
 
 ## 0.1.1

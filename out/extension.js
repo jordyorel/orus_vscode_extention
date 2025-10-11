@@ -39,9 +39,11 @@ const vscode = __importStar(require("vscode"));
 const child_process_1 = require("child_process");
 const path = __importStar(require("path"));
 const defaultTemplate_1 = require("./defaultTemplate");
+const languageClient_1 = require("./languageClient");
 let outputChannel;
 let reusableTerminal;
-function activate(context) {
+let languageClient;
+async function activate(context) {
     outputChannel = vscode.window.createOutputChannel('Orus');
     context.subscriptions.push(outputChannel);
     const runDisposable = vscode.commands.registerCommand('orus.runFile', async () => {
@@ -90,10 +92,14 @@ function activate(context) {
         }
     });
     context.subscriptions.push(runDisposable, templateDisposable, terminalCloseDisposable);
+    languageClient = new languageClient_1.OrusLanguageClient(context);
+    await languageClient.start();
+    context.subscriptions.push(languageClient);
 }
-function deactivate() {
+async function deactivate() {
     reusableTerminal?.dispose();
     outputChannel?.dispose();
+    await languageClient?.stop();
 }
 function runInIntegratedTerminal(executablePath, filePath) {
     if (!reusableTerminal) {

@@ -16,6 +16,8 @@
     { "include": "#constants" },
     { "include": "#keywords" },
     { "include": "#builtins" },
+    { "include": "#types" },
+    { "include": "#variables" },
     { "include": "#function-call" },
     { "include": "#operators" }
   ],
@@ -196,6 +198,26 @@
         {
           "name": "support.function.builtin.orus",
           "match": "\\b(?:print|len|push|pop|sorted|range|input|int|float|typeof|istype|timestamp)\\b(?=\\s*\\()"
+        }
+      ]
+    },
+    "types": {
+      "patterns": [
+        {
+          "name": "support.type.numeric.orus",
+          "match": "\\b(?:i32|i64|u32|u64|f64)\\b"
+        },
+        {
+          "name": "support.type.text.orus",
+          "match": "\\bstring\\b"
+        }
+      ]
+    },
+    "variables": {
+      "patterns": [
+        {
+          "name": "variable.other.orus",
+          "match": "\\b(?!(?:and|as|break|catch|continue|elif|else|enum|fn|for|if|impl|in|match|matches|mut|not|or|pass|print|pub|return|struct|try|use|while|len|push|pop|sorted|range|input|int|float|typeof|istype|timestamp)\\b)(?:[a-z_][\\w]*)\\b"
         }
       ]
     },

@@ -1,4 +1,5 @@
 import { readFileSync } from 'fs';
+import * as path from 'path';
 import { StreamMessageReader, StreamMessageWriter, JsonRpcMessage, isRequestMessage, isNotificationMessage } from '../shared/lspTransport';
 
 interface InitializeParams {
@@ -101,7 +102,7 @@ class DocumentStore {
 class OrusLanguageServer {
   private readonly reader = new StreamMessageReader(process.stdin);
   private readonly writer = new StreamMessageWriter(process.stdout);
-  private readonly keywordIndex = new KeywordIndex(require.resolve('../../docs/KEYWORDS.md'));
+  private readonly keywordIndex = new KeywordIndex(path.join(__dirname, '../../docs/KEYWORDS.md'));
   private readonly documents = new DocumentStore();
 
   start(): void {

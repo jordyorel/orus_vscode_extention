@@ -1,16 +1,16 @@
 {
   "$schema": "vscode://schemas/color-theme",
-  "name": "Orus Purple",
+  "name": "Orus One Dark",
   "type": "dark",
   "colors": {
-    "editor.background": "#0F101A",
-    "editor.foreground": "#E6E6F0",
-    "editor.lineHighlightBackground": "#1B1D2E",
-    "editorLineNumber.foreground": "#4D4F77",
-    "editorCursor.foreground": "#C3A6FF",
-    "editor.selectionBackground": "#3C2E5E60",
-    "sideBar.background": "#121324",
-    "sideBar.foreground": "#BFC1D9"
+    "editor.background": "#282C34",
+    "editor.foreground": "#ABB2BF",
+    "editor.lineHighlightBackground": "#2C313C",
+    "editorLineNumber.foreground": "#5C6370",
+    "editorCursor.foreground": "#528BFF",
+    "editor.selectionBackground": "#3E4451",
+    "sideBar.background": "#21252B",
+    "sideBar.foreground": "#D7DAE0"
   },
   "tokenColors": [
     {
@@ -28,7 +28,7 @@
         "storage.modifier.orus"
       ],
       "settings": {
-        "foreground": "#A988FF"
+        "foreground": "#C678DD"
       }
     },
     {
@@ -36,7 +36,7 @@
         "support.function.builtin.orus"
       ],
       "settings": {
-        "foreground": "#C7A3FF"
+        "foreground": "#61AFEF"
       }
     },
     {
@@ -45,7 +45,7 @@
         "entity.name.function.call.orus"
       ],
       "settings": {
-        "foreground": "#7DD3FC"
+        "foreground": "#61AFEF"
       }
     },
     {
@@ -55,7 +55,7 @@
         "entity.name.type.class.orus"
       ],
       "settings": {
-        "foreground": "#FF99D6"
+        "foreground": "#E5C07B"
       }
     },
     {
@@ -63,7 +63,7 @@
         "string.quoted.double.orus"
       ],
       "settings": {
-        "foreground": "#9BE29B"
+        "foreground": "#98C379"
       }
     },
     {
@@ -71,15 +71,17 @@
         "constant.numeric.orus"
       ],
       "settings": {
-        "foreground": "#F8D068"
+        "foreground": "#D19A66"
       }
     },
     {
       "scope": [
-        "constant.language.boolean.orus"
+        "constant.language.boolean.orus",
+        "support.type.numeric.orus",
+        "support.type.text.orus"
       ],
       "settings": {
-        "foreground": "#F49AC2"
+        "foreground": "#56B6C2"
       }
     },
     {
@@ -87,7 +89,15 @@
         "constant.other.constant.orus"
       ],
       "settings": {
-        "foreground": "#FFD479"
+        "foreground": "#E5C07B"
+      }
+    },
+    {
+      "scope": [
+        "variable.other.orus"
+      ],
+      "settings": {
+        "foreground": "#E06C75"
       }
     },
     {
@@ -96,7 +106,7 @@
         "comment.block.orus"
       ],
       "settings": {
-        "foreground": "#646892",
+        "foreground": "#5C6370",
         "fontStyle": "italic"
       }
     }
