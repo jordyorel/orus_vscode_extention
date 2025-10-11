@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+- Expanded keyword scopes, builtin detection, constants, and function-call highlighting so every Orus construct receives a token colour
+- Added purple accent coloring via bundled theme and default token customizations
+- Shipped Orus file icon theme assets (Seti-based) so `.orus` files display the logo without losing default icons
+
 ## 0.1.1
 - Broadened VS Code compatibility so `.orus` files highlight correctly on older editor builds
 

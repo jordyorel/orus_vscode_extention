@@ -1,0 +1,26 @@
+{
+  "$schema": "vscode://schemas/icon-theme",
+  "extends": "vs-seti",
+  "iconDefinitions": {
+    "orus-file": {
+      "iconPath": "../logo/orus-file-dark.png"
+    },
+    "orus-file-light": {
+      "iconPath": "../logo/orus-file-light.png"
+    }
+  },
+  "fileExtensions": {
+    "orus": "orus-file"
+  },
+  "languageIds": {
+    "orus": "orus-file"
+  },
+  "light": {
+    "fileExtensions": {
+      "orus": "orus-file-light"
+    },
+    "languageIds": {
+      "orus": "orus-file-light"
+    }
+  }
+}

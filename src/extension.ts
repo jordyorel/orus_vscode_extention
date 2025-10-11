@@ -2,6 +2,8 @@ import * as vscode from 'vscode';
 import { spawn } from 'child_process';
 import * as path from 'path';
 
+import { defaultTemplate } from './defaultTemplate';
+
 let outputChannel: vscode.OutputChannel | undefined;
 let reusableTerminal: vscode.Terminal | undefined;
 
@@ -123,10 +125,3 @@ function quoteForShell(value: string): string {
   const escaped = value.replace(/(["\\`$])/g, '\\$1');
   return `"${escaped}"`;
 }
-
-const defaultTemplate = `// Welcome to Orus!
-use std.io
-
-fn main():
-    print("Hello from Orus!")
-`;

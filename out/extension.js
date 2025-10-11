@@ -38,6 +38,7 @@ exports.deactivate = deactivate;
 const vscode = __importStar(require("vscode"));
 const child_process_1 = require("child_process");
 const path = __importStar(require("path"));
+const defaultTemplate_1 = require("./defaultTemplate");
 let outputChannel;
 let reusableTerminal;
 function activate(context) {
@@ -79,7 +80,7 @@ function activate(context) {
     const templateDisposable = vscode.commands.registerCommand('orus.createFileFromTemplate', async () => {
         const document = await vscode.workspace.openTextDocument({
             language: 'orus',
-            content: defaultTemplate,
+            content: defaultTemplate_1.defaultTemplate,
         });
         await vscode.window.showTextDocument(document);
     });
@@ -137,10 +138,4 @@ function quoteForShell(value) {
     const escaped = value.replace(/(["\\`$])/g, '\\$1');
     return `"${escaped}"`;
 }
-const defaultTemplate = `// Welcome to Orus!
-use std.io
-
-fn main():
-    print("Hello from Orus!")
-`;
 //# sourceMappingURL=extension.js.map

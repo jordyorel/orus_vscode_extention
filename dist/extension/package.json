@@ -6,7 +6,7 @@
   "publisher": "orus-lang",
   "license": "MIT",
   "engines": {
-    "vscode": "^1.56.0"
+    "vscode": "^1.85.0"
   },
   "categories": [
     "Programming Languages"
@@ -24,6 +24,8 @@
     "onCommand:orus.createFileFromTemplate"
   ],
   "main": "./out/extension.js",
+  "browser": "./out/extension-web.js",
+  "extensionKind": ["workspace", "ui"],
   "contributes": {
     "languages": [
       {
@@ -45,6 +47,20 @@
       {
         "language": "orus",
         "path": "./snippets/orus.code-snippets"
+      }
+    ],
+    "iconThemes": [
+      {
+        "id": "orus-icons",
+        "label": "Orus File Icons (Seti base)",
+        "path": "./themes/orus-icon-theme.json"
+      }
+    ],
+    "themes": [
+      {
+        "label": "Orus Purple",
+        "uiTheme": "vs-dark",
+        "path": "./themes/orus-color-theme.json"
       }
     ],
     "commands": [
@@ -71,6 +87,52 @@
     "configurationDefaults": {
       "files.associations": {
         "*.orus": "orus"
+      },
+      "editor.tokenColorCustomizations": {
+        "textMateRules": [
+          {
+            "scope": [
+              "keyword.declaration.function.orus",
+              "keyword.declaration.type.orus",
+              "keyword.declaration.impl.orus",
+              "keyword.control.conditional.orus",
+              "keyword.control.loop.orus",
+              "keyword.control.flow.orus",
+              "keyword.control.exception.orus",
+              "keyword.control.import.orus",
+              "keyword.operator.logical.orus",
+              "keyword.operator.membership.orus",
+              "storage.modifier.orus"
+            ],
+            "settings": {
+              "foreground": "#A988FF"
+            }
+          },
+          {
+            "scope": [
+              "support.function.builtin.orus"
+            ],
+            "settings": {
+              "foreground": "#C7A3FF"
+            }
+          },
+          {
+            "scope": [
+              "entity.name.function.call.orus"
+            ],
+            "settings": {
+              "foreground": "#7DD3FC"
+            }
+          },
+          {
+            "scope": [
+              "constant.other.constant.orus"
+            ],
+            "settings": {
+              "foreground": "#FFD479"
+            }
+          }
+        ]
       }
     },
     "configuration": {

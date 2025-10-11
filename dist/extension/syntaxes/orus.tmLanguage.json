@@ -13,7 +13,10 @@
     { "include": "#enum-definition" },
     { "include": "#impl-block" },
     { "include": "#labels" },
+    { "include": "#constants" },
     { "include": "#keywords" },
+    { "include": "#builtins" },
+    { "include": "#function-call" },
     { "include": "#operators" }
   ],
   "repository": {
@@ -132,6 +135,14 @@
         }
       ]
     },
+    "constants": {
+      "patterns": [
+        {
+          "name": "constant.other.constant.orus",
+          "match": "\\b[A-Z][A-Z0-9_]*\\b"
+        }
+      ]
+    },
     "keywords": {
       "patterns": [
         {
@@ -139,12 +150,32 @@
           "match": "\\b(?:pub|mut)\\b"
         },
         {
-          "name": "keyword.declaration.orus",
-          "match": "\\b(?:fn|struct|enum|impl)\\b"
+          "name": "keyword.declaration.function.orus",
+          "match": "\\bfn\\b"
+        },
+        {
+          "name": "keyword.declaration.type.orus",
+          "match": "\\b(?:struct|enum)\\b"
+        },
+        {
+          "name": "keyword.declaration.impl.orus",
+          "match": "\\bimpl\\b"
         },
         {
           "name": "keyword.control.conditional.orus",
-          "match": "\\b(?:if|elif|else|match|try|catch|while|for|break|continue|return|pass)\\b"
+          "match": "\\b(?:if|elif|else|match)\\b"
+        },
+        {
+          "name": "keyword.control.loop.orus",
+          "match": "\\b(?:while|for)\\b"
+        },
+        {
+          "name": "keyword.control.flow.orus",
+          "match": "\\b(?:break|continue|return|pass)\\b"
+        },
+        {
+          "name": "keyword.control.exception.orus",
+          "match": "\\b(?:try|catch)\\b"
         },
         {
           "name": "keyword.control.import.orus",
@@ -155,12 +186,34 @@
           "match": "\\b(?:and|or|not|matches)\\b"
         },
         {
-          "name": "keyword.operator.in.orus",
-          "match": "\\b(?:in)\\b"
+          "name": "keyword.operator.membership.orus",
+          "match": "\\bin\\b"
+        }
+      ]
+    },
+    "builtins": {
+      "patterns": [
+        {
+          "name": "support.function.builtin.orus",
+          "match": "\\b(?:print|len|push|pop|sorted|range|input|int|float|typeof|istype|timestamp)\\b(?=\\s*\\()"
+        }
+      ]
+    },
+    "function-call": {
+      "patterns": [
+        {
+          "name": "entity.name.function.call.orus",
+          "match": "(?<!\\.)(?<!::)\\b([A-Za-z_][\\w]*)\\b(?=\\s*\\()",
+          "captures": {
+            "1": { "name": "entity.name.function.call.orus" }
+          }
         },
         {
-          "name": "support.function.orus",
-          "match": "\\bprint\\b"
+          "name": "entity.name.function.call.orus",
+          "match": "\\.(?:\\s*)([A-Za-z_][\\w]*)(?=\\s*\\()",
+          "captures": {
+            "1": { "name": "entity.name.function.call.orus" }
+          }
         }
       ]
     },
