@@ -1,5 +1,10 @@
 // Basic algorithm implementations in Orus
 // Factorial, Fibonacci sequence generation, GCD, linear search, and bubble sort examples.
+// Parameters tuned to keep runs sub-second across languages
+N1: i32 = 2_000_000   // simple loop iterations
+O2: i32 = 1000        // outer loop for nested
+I2: i32 = 1000        // inner loop for nested (O2*I2 = 1,000,000)
+N3: i32 = 1_000_000   // while-style iterations
 
 fn factorial(n: i32) -> i64:
     if n < 0:
@@ -126,3 +131,4 @@ print("linear_search(numbers, 9) ->", linear_search(numbers, 9))
 
 print("bubble_sort(numbers) ->", bubble_sort(numbers))
 print("selection_sort(numbers) ->", selection_sort(numbers))
+

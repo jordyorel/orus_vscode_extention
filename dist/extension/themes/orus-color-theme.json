@@ -28,7 +28,8 @@
         "storage.modifier.orus"
       ],
       "settings": {
-        "foreground": "#C678DD"
+        "foreground": "#C678DD",
+        "fontStyle": "italic"
       }
     },
     {
@@ -97,7 +98,15 @@
         "variable.other.orus"
       ],
       "settings": {
-        "foreground": "#E06C75"
+        "foreground": "#B0B6C2"
+      }
+    },
+    {
+      "scope": [
+        "variable.other.constant.orus"
+      ],
+      "settings": {
+        "foreground": "#B0B6C2"
       }
     },
     {

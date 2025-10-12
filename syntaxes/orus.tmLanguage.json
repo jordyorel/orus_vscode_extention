@@ -140,7 +140,7 @@
     "constants": {
       "patterns": [
         {
-          "name": "constant.other.constant.orus",
+          "name": "variable.other.constant.orus",
           "match": "\\b[A-Z][A-Z0-9_]*\\b"
         }
       ]
@@ -217,7 +217,7 @@
       "patterns": [
         {
           "name": "variable.other.orus",
-          "match": "\\b(?!(?:and|as|break|catch|continue|elif|else|enum|fn|for|if|impl|in|match|matches|mut|not|or|pass|print|pub|return|struct|try|use|while|len|push|pop|sorted|range|input|int|float|typeof|istype|timestamp)\\b)(?:[a-z_][\\w]*)\\b"
+          "match": "\\b(?!(?:and|as|break|catch|continue|elif|else|enum|fn|for|if|impl|in|match|matches|mut|not|or|pass|print|pub|return|struct|try|use|while|len|push|pop|sorted|range|input|int|float|typeof|istype|timestamp)\\b)(?!(?:[A-Z][A-Z0-9_]*)\\b)(?:[A-Za-z_][\\w]*)\\b"
         }
       ]
     },
@@ -225,14 +225,14 @@
       "patterns": [
         {
           "name": "entity.name.function.call.orus",
-          "match": "(?<!\\.)(?<!::)\\b([A-Za-z_][\\w]*)\\b(?=\\s*\\()",
+          "match": "(?<!\\.)(?<!::)\\b(?!(?:len|push|pop|sorted|range|input|int|float|typeof|istype|timestamp)\\b)([A-Za-z_][\\w]*)\\b(?=\\s*\\()",
           "captures": {
             "1": { "name": "entity.name.function.call.orus" }
           }
         },
         {
           "name": "entity.name.function.call.orus",
-          "match": "\\.(?:\\s*)([A-Za-z_][\\w]*)(?=\\s*\\()",
+          "match": "\\.(?:\\s*)(?!(?:len|push|pop|sorted|range|input|int|float|typeof|istype|timestamp)\\b)([A-Za-z_][\\w]*)(?=\\s*\\()",
           "captures": {
             "1": { "name": "entity.name.function.call.orus" }
           }

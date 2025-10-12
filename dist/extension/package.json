@@ -25,14 +25,24 @@
   ],
   "main": "./out/extension.js",
   "browser": "./out/extension-web.js",
-  "extensionKind": ["workspace", "ui"],
+  "extensionKind": [
+    "workspace",
+    "ui"
+  ],
   "contributes": {
     "languages": [
       {
         "id": "orus",
-        "aliases": ["Orus", "orus"],
-        "extensions": [".orus"],
-        "filenamePatterns": ["*.orus"],
+        "aliases": [
+          "Orus",
+          "orus"
+        ],
+        "extensions": [
+          ".orus"
+        ],
+        "filenamePatterns": [
+          "*.orus"
+        ],
         "configuration": "./language-configuration.json"
       }
     ],
@@ -47,13 +57,6 @@
       {
         "language": "orus",
         "path": "./snippets/orus.code-snippets"
-      }
-    ],
-    "iconThemes": [
-      {
-        "id": "orus-icons",
-        "label": "Orus File Icons (Seti base)",
-        "path": "./themes/orus-icon-theme.json"
       }
     ],
     "themes": [
@@ -105,7 +108,8 @@
               "storage.modifier.orus"
             ],
             "settings": {
-              "foreground": "#C678DD"
+              "foreground": "#C678DD",
+              "fontStyle": "italic"
             }
           },
           {
@@ -146,10 +150,10 @@
           },
           {
             "scope": [
-              "constant.other.constant.orus"
+              "variable.other.constant.orus"
             ],
             "settings": {
-              "foreground": "#E5C07B"
+              "foreground": "#B0B6C2"
             }
           },
           {
@@ -157,7 +161,7 @@
               "variable.other.orus"
             ],
             "settings": {
-              "foreground": "#E06C75"
+              "foreground": "#C86B3C"
             }
           },
           {
@@ -168,6 +172,16 @@
             ],
             "settings": {
               "foreground": "#56B6C2"
+            }
+          },
+          {
+            "scope": [
+              "comment.line.double-slash.orus",
+              "comment.block.orus"
+            ],
+            "settings": {
+              "foreground": "#5C6370",
+              "fontStyle": "italic"
             }
           }
         ]
@@ -187,7 +201,14 @@
           "description": "If enabled, run Orus files in an integrated terminal instead of the Orus output channel."
         }
       }
-    }
+    },
+    "iconThemes": [
+      {
+        "id": "orus-icons",
+        "label": "Orus File Icons (Seti base)",
+        "path": "./themes/orus-icon-theme.json"
+      }
+    ]
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
